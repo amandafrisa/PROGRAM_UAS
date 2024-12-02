@@ -1,0 +1,29 @@
+# Gerak Harmonis Sederhana --> x(t) = A * cos(ω * t)
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter yang digunakan
+A = 5  # Amplitudo dalam cm
+T = 10  # Periode dalam detik
+t_maks = 50  # Waktu maksimum dalam detik
+dt = 0.1  # Interval waktu dalam detik
+
+# Frekuensi sudut
+omega = 2 * np.pi / T  # ω = 2π/T
+
+# Fungsi posisi sebagai fungsi waktu
+def x(t):
+    return A * np.cos(omega * t)
+
+# Rentang waktu
+t = np.arange(0, t_maks + dt, dt)
+y = x(t)
+
+# Plotting grafik
+plt.plot(t, y, color='orange', linestyle='-', label='x(t) = A * cos(ωt)')
+plt.xlabel('Waktu (t) dalam detik')
+plt.ylabel('Posisi (x) dalam cm')
+plt.title('Grafik Posisi terhadap Waktu pada GHS')
+plt.legend()
+plt.grid()
+plt.show()

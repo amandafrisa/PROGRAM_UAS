@@ -1,0 +1,23 @@
+# Gaya Tak Konstan F(x) = 2x^2 + 4x + 2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter perpindahan maksimum
+s_maks = 30  # Perpindahan benda sejauh 30 meter
+
+# Fungsi gaya tak konstan
+def F(x):
+    return 2 * x**2 + 4 * x + 2
+
+# Membuat array perpindahan dari 0 hingga s_maks
+x = np.arange(0, s_maks + 0.5, 0.5)  # Langkah perpindahan 0.5 meter
+y = F(x)
+
+# Membuat grafik
+plt.plot(x, y, color='r', linestyle='-', label='F(x) = 2x^2 + 4x + 2')
+plt.xlabel("Perpindahan (m)")
+plt.ylabel("Gaya (N)")
+plt.title("Grafik Gaya Tak Konstan terhadap Perpindahan")
+plt.legend()
+plt.grid()
+plt.show()

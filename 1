@@ -1,0 +1,25 @@
+# Konsep Gaya Pegas --> F(x) = -k * x
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter yang digunakan
+k = 60  # konstanta pegas dalam N/m
+x_maks = 0.5  # jarak maksimum dalam meter
+dx = 0.02  # langkah perhitungan
+
+# Fungsi Hukum Hooke
+def F(x):
+    return -k * x
+
+# Rentang posisi x
+x = np.arange(0, x_maks + dx, dx)
+y = F(x)
+
+# Plotting grafik
+plt.plot(x, y, color='pink', linestyle='-', label='F(x) = -k * x')
+plt.xlabel('Posisi (x) dalam meter')
+plt.ylabel('Gaya (F) dalam Newton')
+plt.title('Grafik Gaya Pegas terhadap Posisi')
+plt.legend()
+plt.grid()
+plt.show()
